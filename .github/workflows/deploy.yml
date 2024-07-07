@@ -31,11 +31,11 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Install pnpm
-        run: corepack prepare pnpm@latest --activate
+        run: npm install -g pnpm
+
+      - name: Add pnpm to PATH
+        run: echo "::add-path::$(npm bin -g)"
 
       - name: Install dependencies
         run: pnpm install

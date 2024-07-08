@@ -1,6 +1,6 @@
-export const ua = {
+export const ru = {
   translation: {
-    "footer.powered": "Створено",
+    "footer.powered": "Создано",
     "footer.button.go_home": "Кнопка для переходу на GitHub автора",
   },
 };

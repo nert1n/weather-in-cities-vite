@@ -1,7 +1,9 @@
 import { en } from "./en";
 import { ua } from "./ua";
+import { ru } from "./ru.ts";
 
-export const locales = {
+export const resources = {
   en,
   ua,
+  ru,
 };

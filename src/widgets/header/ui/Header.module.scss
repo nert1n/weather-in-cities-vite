@@ -1,0 +1,11 @@
+.header {
+	height: 60px;
+	background-color: var(--background-color--header_footer);
+	box-shadow: 0 3px 10px var(--shadows-color);
+	color: var(--text-color);
+	font-size: 16px;
+	font-weight: 400;
+	padding: 0 5%;
+	margin-bottom: 50px;
+	transition: all 0.2s linear;
+}

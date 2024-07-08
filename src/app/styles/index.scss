@@ -1,3 +1,28 @@
+@import "./base/nule";
 @import "./themes/dark";
 @import "./themes/light";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+	--text-color-light: #ffffff;
+	--text-color-black: #000000;
+
+	--background-color: linear-gradient(to bottom right, #59cdff, #0080b7);
+	--background-color--header_footer: #00000050;
+
+	--background-input-color: rgba(255, 255, 255, 0.80);
+
+	--yellow: #ebff34;
+	--yellow-hover: #e9ff6c;
+}
+
+html {
+	background: no-repeat var(--background-color);
+	background-size: 100%;
+	font-family: "Roboto", sans-serif;
+}
+
+main {
+	min-height: calc(100vh - 221px);
+	padding: 0 5%;
+}

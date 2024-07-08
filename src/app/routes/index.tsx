@@ -5,13 +5,13 @@ const router = createBrowserRouter(routes);
 
 const AppRouter = () => {
   return (
-    <div>
+    <main>
       <RouterProvider
         router={router}
         future={{ v7_startTransition: true }}
         fallbackElement={<h1>Loading</h1>}
       />
-    </div>
+    </main>
   );
 };
 

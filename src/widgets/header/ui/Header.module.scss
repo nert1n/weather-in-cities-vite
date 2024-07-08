@@ -1,3 +1,62 @@
+.burger {
+	z-index: 2;
+	display: none;
+	position: relative;
+	height: 25px;
+	width: 35px;
+	min-width: 30px;
+	cursor: pointer;
+	margin-left: 10px;
+
+	span {
+		position: absolute;
+		background-color: var(--text-color);
+		left: 0;
+		width: 100%;
+		height: 4px;
+		top: 10px;
+		border-radius: 1px;
+		transition: all 0.2s ease 0s;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		background-color: var(--text-color);
+		position: absolute;
+		width: 100%;
+		height: 4px;
+		left: 0;
+		border-radius: 1px;
+		transition: all 0.3s ease 0s;
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		bottom: 0;
+	}
+
+	&.active {
+		&::before {
+			transform: rotate(45deg);
+			top: 10px;
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+			bottom: 10px;
+		}
+
+		span {
+			transform: scale(0);
+		}
+	}
+}
+
+
 .header {
 	height: 60px;
 	background-color: var(--background-color--header_footer);

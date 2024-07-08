@@ -1,5 +1,11 @@
+import Layout from "../../app/layout";
+
 const NotFound = () => {
-  return <div>NotFound</div>;
+  return (
+    <Layout>
+      <div>NotFound</div>
+    </Layout>
+  );
 };
 
 export default NotFound;

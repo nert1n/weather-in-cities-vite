@@ -1,5 +1,11 @@
+import Layout from "../../app/layout";
+
 const RegistrationPage = () => {
-  return <div>RegistrationPage</div>;
+  return (
+    <Layout>
+      <div>RegistrationPage</div>
+    </Layout>
+  );
 };
 
 export default RegistrationPage;

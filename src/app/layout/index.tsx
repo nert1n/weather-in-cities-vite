@@ -4,11 +4,11 @@ import ILayout from "./layout.interface.ts";
 
 const Layout = ({ children }: ILayout) => {
   return (
-    <div>
+    <>
       <Header />
-      {children}
+      <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 type ISeaLevel = {
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
   color?: string;
   className?: string;
 };

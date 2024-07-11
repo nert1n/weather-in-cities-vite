@@ -1,9 +1,16 @@
 @import "./base/nule";
 @import "./themes/dark";
 @import "./themes/light";
+@import "./icons/owfont-regular.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
+	--header-icon: #74EEFF;
+
+	--nule-color: rgba(0, 0, 0, 0);
+
+	--icon-color: rgb(47, 47, 47);
+
 	--text-color-light: #ffffff;
 	--text-color-black: #000000;
 
@@ -11,6 +18,8 @@
 	--background-color--header_footer: #00000050;
 
 	--background-input-color: rgba(255, 255, 255, 0.80);
+
+	--border-color: rgb(90, 90, 90);
 
 	--yellow: #ebff34;
 	--yellow-hover: #e9ff6c;

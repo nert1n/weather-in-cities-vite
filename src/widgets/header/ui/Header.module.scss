@@ -29,12 +29,22 @@
 		align-items: center;
 		color: var(--text-color-light);
 		font-size: 20px;
-		font-weight: 500;
+		font-weight: 600;
+		transition: all 0.2s ease 0s;
+
+		&:hover {
+			color: var(--text-color-light-hover);
+		}
 
 		&_image {
 			font-size: 50px;
 			color: var(--header-icon);
 			margin-right: 10px;
+			transition: all 0.2s ease 0s;
+
+			&:hover {
+				color: var(--header-icon-hover);
+			}
 		}
 	}
 }

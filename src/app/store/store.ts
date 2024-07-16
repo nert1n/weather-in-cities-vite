@@ -9,3 +9,6 @@ export const store: EnhancedStore<{ city: ICityState; auth: IAuthState }> =
       auth: authSlice,
     },
   });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

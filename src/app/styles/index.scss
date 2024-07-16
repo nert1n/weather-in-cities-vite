@@ -6,18 +6,23 @@
 
 :root {
 	--header-icon: #74EEFF;
+	--header-icon-hover: #39dff6;
 
 	--nule-color: rgba(0, 0, 0, 0);
 
 	--icon-color: rgb(47, 47, 47);
+	--icon-color-hover: rgb(19, 19, 19);
 
 	--text-color-light: #ffffff;
+	--text-color-light-hover: #dadada;
 	--text-color-black: #000000;
+	--text-color-black-hover: #171717;
 
 	--background-color: linear-gradient(to bottom right, #59cdff, #0080b7);
 	--background-color--header_footer: #00000050;
 
 	--background-input-color: rgba(255, 255, 255, 0.80);
+	--background-input-color-hover: rgb(255, 255, 255);
 
 	--border-color: rgb(90, 90, 90);
 

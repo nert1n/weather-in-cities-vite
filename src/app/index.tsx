@@ -1,20 +1,22 @@
 import "./styles/index.scss";
-import AppRouter from "./routes";
-import Providers from "./providers";
+
 import "../shared/lib/i18n";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+
+import Providers from "./providers";
+import AppRouter from "./routes";
 
 function App() {
   const { i18n } = useTranslation();
 
-  let userLanguage = "en";
+  const [userLanguage] = useState("en");
+
+  const userLanguageRef = useRef(navigator.language.substring(0, 2));
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    userLanguage = navigator.language.substring(0, 2);
-    document.documentElement.lang = userLanguage;
-  });
+    document.documentElement.lang = userLanguageRef.current;
+  }, []);
 
   useEffect(() => {
     i18n.changeLanguage(userLanguage);

@@ -1,7 +1,8 @@
+import { ChangeEvent, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import ISelectLang from "./select-lang.interface.ts";
 import styles from "./SelectLang.module.scss";
-import { useTranslation } from "react-i18next";
-import { ChangeEvent, useEffect, useState } from "react";
 import { LANGUAGES } from "../../../shared/consts/languages.ts";
 
 export const SelectLang = ({ className }: ISelectLang) => {

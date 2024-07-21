@@ -1,6 +1,6 @@
-import { Header } from "../../widgets/header";
-import { Footer } from "../../widgets/footer";
 import ILayout from "./layout.interface.ts";
+import { Footer } from "../../widgets/footer";
+import { Header } from "../../widgets/header";
 
 const Layout = ({ children }: ILayout) => {
   return (

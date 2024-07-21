@@ -1,10 +1,11 @@
-import styles from "./Search.module.scss";
-import Magnifier from "../../../shared/lib/ui/icons/magnifier";
-import { useTranslation } from "react-i18next";
 import { useRef, useState } from "react";
-import ISearch from "./search.interface.ts";
-import { syncState } from "../../../app/store/slices/citySlice.ts";
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
+
+import ISearch from "./search.interface.ts";
+import styles from "./Search.module.scss";
+import { syncState } from "../../../app/store/slices/citySlice.ts";
+import Magnifier from "../../../shared/lib/ui/icons/magnifier";
 
 export const Search = ({ className }: ISearch) => {
   const { t } = useTranslation();

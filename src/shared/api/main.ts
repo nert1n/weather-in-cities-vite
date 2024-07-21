@@ -15,8 +15,4 @@ export default class MainService {
     );
     return res.data;
   }
-  static async getCountry() {
-    const res = await axios.get("https://ipapi.co/json/");
-    return res.data.country.toLowerCase();
-  }
 }

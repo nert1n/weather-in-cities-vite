@@ -8,7 +8,10 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   ignorePatterns: [
     'dist',
@@ -17,13 +20,27 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: [
     'react-refresh',
-    'prettier'
+    'prettier',
+    'import'
   ],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true }
     ],
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          "internal",
+          ["parent", "sibling", "index"],
+          "object"
+        ],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ]
   }
 };

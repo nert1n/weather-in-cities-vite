@@ -1,12 +1,13 @@
 import { configureStore, EnhancedStore } from "@reduxjs/toolkit";
-import citySlice, { ICityState } from "./slices/citySlice";
-import authSlice, { IAuthState } from "./slices/authSlice";
+
+import authReducer, { IAuthState } from "./slices/authSlice";
+import cityReducer, { ICityState } from "./slices/citySlice";
 
 export const store: EnhancedStore<{ city: ICityState; auth: IAuthState }> =
   configureStore({
     reducer: {
-      city: citySlice,
-      auth: authSlice,
+      auth: authReducer,
+      city: cityReducer,
     },
   });
 

@@ -1,6 +1,6 @@
 import { en } from "./en";
-import { ua } from "./ua";
 import { ru } from "./ru.ts";
+import { ua } from "./ua";
 
 export const resources = {
   en,

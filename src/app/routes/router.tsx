@@ -1,8 +1,8 @@
-import MainPage from "../../pages/main";
 import LoginPage from "../../pages/login";
+import MainPage from "../../pages/main";
+import NotFound from "../../pages/not-found";
 import ProfilePage from "../../pages/profile";
 import RegistrationPage from "../../pages/registration";
-import NotFound from "../../pages/not-found";
 
 export const routes = [
   {

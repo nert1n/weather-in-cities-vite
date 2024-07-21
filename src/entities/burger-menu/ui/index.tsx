@@ -1,5 +1,5 @@
-import styles from "./BurgerMenu.module.scss";
 import IBurgerMenu from "./burger-menu.interface.ts";
+import styles from "./BurgerMenu.module.scss";
 
 export const BurgerMenu = ({
   className = "",

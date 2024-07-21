@@ -1,8 +1,9 @@
-import styles from "./Header.module.scss";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search } from "../../../features/search";
+
+import styles from "./Header.module.scss";
 import { BurgerMenu } from "../../../entities/burger-menu";
+import { Search } from "../../../features/search";
 import { SelectLang } from "../../../features/select-lang";
 
 export const Header = () => {

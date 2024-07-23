@@ -4,5 +4,7 @@ export const ua = {
     "footer.button.go_home": "Кнопка для переходу на GitHub автора",
     "search.input": "Пошук міста",
     "search.button": "Кнопка пошуку",
+    "search.city.empty": "Місто не може бути порожнім!",
+    "search.city.notfound": "Такого міста нема!",
   },
 };

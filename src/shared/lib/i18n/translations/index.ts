@@ -1,6 +1,6 @@
-import { en } from "./en";
-import { ru } from "./ru.ts";
-import { ua } from "./ua";
+import { en } from "./languages/en";
+import { ru } from "./languages/ru";
+import { ua } from "./languages/ua";
 
 export const resources = {
   en,

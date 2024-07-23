@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import ISearch from "./search.interface.ts";
 import styles from "./Search.module.scss";
 import { syncState } from "../../../app/store/slices/citySlice.ts";
-import CITIES_EN from "../../../shared/consts/cities.ts";
+import CITIES from "../../../shared/consts/cities/cities.ts";
 import Magnifier from "../../../shared/lib/ui/icons/magnifier";
 
 interface IForm {
@@ -23,9 +23,7 @@ export const Search = ({ className }: ISearch) => {
   const cityValue = watch("city");
 
   function searchQuery(city: string = "") {
-    return CITIES_EN.filter((el) =>
-      el.toLowerCase().includes(city.toLowerCase()),
-    );
+    return CITIES.filter((el) => el.toLowerCase().includes(city.toLowerCase()));
   }
 
   const handleCityChange = ({ city }: IForm) => {
@@ -45,7 +43,7 @@ export const Search = ({ className }: ISearch) => {
           title={t("search.input")}
           placeholder={t("search.input")}
           {...register("city", {
-            required: "Город не может быть пустым!",
+            required: `${t("search.city.empty")}`,
           })}
         />
         <button
@@ -64,7 +62,9 @@ export const Search = ({ className }: ISearch) => {
       ) : (
         <div className={styles.suggestions}>
           {searchQuery(cityValue).slice(0, 10).length === 0 ? (
-            <p className={styles.suggestions__notfound}>Такого города нет</p>
+            <p className={styles.suggestions__notfound}>
+              {t("search.city.notfound")}
+            </p>
           ) : (
             ""
           )}

@@ -5,10 +5,13 @@
 .suggestions {
 	position: absolute;
 	width: 100%;
-	border-radius: 10px;
+	border-radius: 5px;
 	background-color: var(--background-input-color);
 	padding: 6px;
 	margin-top: 4px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease, visibility 0.5s ease;
 
 	&__notfound {
 		display: flex;
@@ -36,7 +39,7 @@
 	width: 25vw;
 	min-width: 120px;
 	max-width: 330px;
-	border-radius: 10px;
+	border-radius: 5px;
 	outline: 1px solid rgba(0, 0, 0, 0);
 	background-color: var(--background-input-color);
 	color: var(--text-color-black);
@@ -51,6 +54,11 @@
 		outline: 1px solid #515151;
         background-color: var(--background-input-color-hover);
     }
+
+	&:focus-within + .suggestions {
+		opacity: 1;
+		visibility: visible;
+	}
 
 	&__icon {
 		display: flex;

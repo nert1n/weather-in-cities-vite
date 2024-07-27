@@ -4,9 +4,9 @@ run-name: ${{ github.actor }} is testing post push 🚀
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
   pull_request:
-    branches: ['main']
+    branches: ["main"]
 
 jobs:
   Explore-GitHub-Actions:

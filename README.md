@@ -24,7 +24,6 @@
 
 <p align="center"><a target='__blank' href='https://nert1n.github.io/weather-in-cities-vite/'>Site link</a>  -  <a target='__blank' href='https://www.figma.com/file/tnCVBolOWMCGmtS0eaiEyA/Weather-in-city?type=design&node-id=0%3A1&mode=design&t=sbfZjPR0muDiR9M6-1'>Figma link</a></p>
 
-
 <h3 align="center">Technologies:</h2>
 
 - React

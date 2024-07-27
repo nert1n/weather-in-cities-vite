@@ -1,50 +1,50 @@
 .header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 60px;
-	background-color: var(--background-color--header_footer);
-	color: var(--text-color-light);
-	font-size: 16px;
-	font-weight: 400;
-	padding: 0 5%;
-	margin-bottom: 50px;
-	transition: all 0.2s linear;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: var(--background-color--header_footer);
+  color: var(--text-color-light);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 5%;
+  margin-bottom: 50px;
+  transition: all 0.2s linear;
 
-	&__auth {
-		margin-left: 24px;
-	}
+  &__auth {
+    margin-left: 24px;
+  }
 
-	&__burger {
-		display: none;
-	}
+  &__burger {
+    display: none;
+  }
 
-	&__auth {
-		color: var(--text-color-lighth);
-	}
+  &__auth {
+    color: var(--text-color-lighth);
+  }
 
-	&__title {
-		display: flex;
-		justify-content: start;
-		align-items: center;
-		color: var(--text-color-light);
-		font-size: 20px;
-		font-weight: 600;
-		transition: all 0.2s ease 0s;
+  &__title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: var(--text-color-light);
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.2s ease 0s;
 
-		&:hover {
-			color: var(--text-color-light-hover);
-		}
+    &:hover {
+      color: var(--text-color-light-hover);
+    }
 
-		&_image {
-			font-size: 50px;
-			color: var(--header-icon);
-			margin-right: 10px;
-			transition: all 0.2s ease 0s;
+    &_image {
+      font-size: 50px;
+      color: var(--header-icon);
+      margin-right: 10px;
+      transition: all 0.2s ease 0s;
 
-			&:hover {
-				color: var(--header-icon-hover);
-			}
-		}
-	}
+      &:hover {
+        color: var(--header-icon-hover);
+      }
+    }
+  }
 }

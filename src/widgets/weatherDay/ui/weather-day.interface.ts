@@ -32,3 +32,8 @@ export interface WeatherReading {
     gust: number;
   };
 }
+
+export interface WeatherDayProps {
+  weatherInfo: WeatherReading;
+  city: string;
+}

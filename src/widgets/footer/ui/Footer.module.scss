@@ -1,32 +1,32 @@
 .footer {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	background-color: var(--background-color--header_footer);
-	font-size: 14px;
-	font-weight: 300;
-	padding: 22px 5%;
-	margin-top: 50px;
-	transition: all 0.2s linear;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--background-color--header_footer);
+  font-size: 14px;
+  font-weight: 300;
+  padding: 22px 5%;
+  margin-top: 50px;
+  transition: all 0.2s linear;
 
-	&__link {
-		color: var(--yellow);
-		text-decoration: underline;
+  &__link {
+    color: var(--yellow);
+    text-decoration: underline;
 
-		&:hover {
-			color: var(--yellow-hover);
-		}
-		&:visited {
-            color: var(--yellow);
-        }
-		&:active {
-            color: var(--yellow-hover);
-        }
-	}
+    &:hover {
+      color: var(--yellow-hover);
+    }
+    &:visited {
+      color: var(--yellow);
+    }
+    &:active {
+      color: var(--yellow-hover);
+    }
+  }
 
-	&__text,
-	&__year {
-		color: var(--text-color-light);
-	}
+  &__text,
+  &__year {
+    color: var(--text-color-light);
+  }
 }

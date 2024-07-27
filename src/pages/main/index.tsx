@@ -9,14 +9,16 @@ import Layout from "../../app/layout";
 import { RootState } from "../../app/store/store.ts";
 import LoaderCircle from "../../entities/loader-circle";
 import MainService from "../../shared/api/main.ts";
+import { WeatherDay } from "../../widgets/weatherDay";
+import { WeatherForecast } from "../../widgets/weatherForecast";
 
 const MainPage = () => {
   const city = useSelector((state: RootState) => state.city.value);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const language = i18n.language;
 
   const [weatherInfo, setWeatherInfo] = useState<WeatherReading[]>([]);
-  const [time] = useState(21);
+  const [time] = useState(9);
 
   const queryClient = useQueryClient();
 
@@ -47,7 +49,7 @@ const MainPage = () => {
   if (isError) {
     return (
       <Layout>
-        <h1 className={styles.main__notfound}>Not found!</h1>
+        <h1 className={styles.main__notfound}>{t("search.city.notfound")}</h1>
       </Layout>
     );
   }
@@ -62,20 +64,13 @@ const MainPage = () => {
 
   return (
     <Layout>
-      <div>
-        <h1>MainPage</h1>
-        <h2>{city}</h2>
-        {weatherInfo.map((el) => {
-          const date = new Date(el.dt_txt);
-          return (
-            <div key={el.dt}>
-              <h3>{date.toLocaleString()}</h3>
-              <p>
-                Temperature: {el.main.temp}°C, Humidity: {el.main.humidity}%
-              </p>
-            </div>
-          );
-        })}
+      <div className={styles.main}>
+        {weatherInfo.length !== 0 ? (
+          <WeatherDay weatherInfo={weatherInfo[0]} city={city} />
+        ) : (
+          ""
+        )}
+        <WeatherForecast weatherInfo={weatherInfo} />
       </div>
     </Layout>
   );

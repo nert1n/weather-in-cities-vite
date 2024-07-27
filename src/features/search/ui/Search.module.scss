@@ -1,85 +1,87 @@
 .container {
-	position: relative;
+  position: relative;
 }
 
 .suggestions {
-	position: absolute;
-	width: 100%;
-	border-radius: 5px;
-	background-color: var(--background-input-color);
-	padding: 6px;
-	margin-top: 4px;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.2s ease, visibility 0.5s ease;
+  position: absolute;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--background-input-color);
+  padding: 6px;
+  margin-top: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.5s ease;
 
-	&__notfound {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: black;
-	}
+  &__notfound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
 
-	&__button {
-		width: 100%;
-		border-radius: 5px;
-		background-color: white;
-		font-size: 16px;
-		padding: 4px;
-		&:not(:last-child) {
-			margin-bottom: 4px;
-		}
-	}
+  &__button {
+    width: 100%;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+    padding: 4px;
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
 }
 
 .search {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 25vw;
-	min-width: 120px;
-	max-width: 330px;
-	border-radius: 5px;
-	outline: 1px solid rgba(0, 0, 0, 0);
-	background-color: var(--background-input-color);
-	color: var(--text-color-black);
-	padding: 8px 6px 8px 6px;
-	transition: all 0.4s ease 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  min-width: 120px;
+  max-width: 330px;
+  border-radius: 5px;
+  outline: 1px solid rgba(0, 0, 0, 0);
+  background-color: var(--background-input-color);
+  color: var(--text-color-black);
+  padding: 8px 6px 8px 6px;
+  transition: all 0.4s ease 0s;
 
-	&:hover {
-        background-color: var(--background-input-color-hover);
-    }
+  &:hover {
+    background-color: var(--background-input-color-hover);
+  }
 
-	&:focus-within {
-		outline: 1px solid #515151;
-        background-color: var(--background-input-color-hover);
-    }
+  &:focus-within {
+    outline: 1px solid #515151;
+    background-color: var(--background-input-color-hover);
+  }
 
-	&:focus-within + .suggestions {
-		opacity: 1;
-		visibility: visible;
-	}
+  &:focus-within + .suggestions {
+    opacity: 1;
+    visibility: visible;
+  }
 
-	&__icon {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-	&__button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-left: 1px solid var(--border-color);
-		padding: 0 6px 0 8px;
-	}
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--border-color);
+    padding: 0 6px 0 8px;
+  }
 
-	&__input {
-		width: calc(100% - 26px);
-		padding-left: 10px;
-		background-color: var(--nule-color);
-		color: var(--text-color-black);
-		font-size: 16px;
-		font-weight: 400;
-	}
+  &__input {
+    width: calc(100% - 26px);
+    padding-left: 10px;
+    background-color: var(--nule-color);
+    color: var(--text-color-black);
+    font-size: 16px;
+    font-weight: 400;
+  }
 }

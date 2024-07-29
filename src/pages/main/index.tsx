@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import { WeatherReading } from "./main.interface.ts";
+import { IMain } from "./main.interface.ts";
 import styles from "./MainPage.module.scss";
 import Layout from "../../app/layout";
 import { RootState } from "../../app/store/store.ts";
@@ -17,7 +17,7 @@ const MainPage = () => {
   const { t, i18n } = useTranslation();
   const language = i18n.language;
 
-  const [weatherInfo, setWeatherInfo] = useState<WeatherReading[]>([]);
+  const [weatherInfo, setWeatherInfo] = useState<IMain[]>([]);
   const [time] = useState(9);
 
   const queryClient = useQueryClient();
@@ -66,11 +66,13 @@ const MainPage = () => {
     <Layout>
       <div className={styles.main}>
         {weatherInfo.length !== 0 ? (
-          <WeatherDay weatherInfo={weatherInfo[0]} city={city} />
+          <>
+            <WeatherDay weatherInfo={weatherInfo[0]} city={city} />
+            <WeatherForecast weatherInfo={weatherInfo} />
+          </>
         ) : (
           ""
         )}
-        <WeatherForecast weatherInfo={weatherInfo} />
       </div>
     </Layout>
   );

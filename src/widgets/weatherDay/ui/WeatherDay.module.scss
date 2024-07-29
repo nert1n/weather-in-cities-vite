@@ -1,7 +1,107 @@
 .day {
-  &__holder {
+  &__title {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--text-color-light);
+  }
+
+  &__info {
+    margin-bottom: 50px;
+  }
+
+  &__item {
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-wrap: wrap;
+    color: var(--text-color-light);
+    margin-bottom: 25px;
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  }
+
+  &__weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-info {
+      display: block;
+      margin-left: 50px;
+    }
+  }
+
+  &__icon {
+    color: var(--text-color-light);
+    font-size: 140px;
+    margin-right: 50px;
+    margin-bottom: -30px;
+  }
+
+  &__temperature {
+    color: var(--text-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+
+  &__temp {
+    font-size: 96px;
+    font-weight: 700;
+  }
+
+  &__celsia {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  &__weather-title {
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  &__weather-description {
+    max-width: 175px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__item {
+    height: 100%;
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    &-like {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0 auto;
+
+      &-icon {
+        margin-right: 10px;
+      }
+
+      &-temperature {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    &__item {
+      justify-content: center;
+    }
   }
 }

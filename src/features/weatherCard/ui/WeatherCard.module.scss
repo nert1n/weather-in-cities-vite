@@ -1,0 +1,80 @@
+.card {
+	width: 200px;
+	min-height: 250px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 4px 9px 20px 0px #00000033;
+	color: #1C1C1C;
+	font-size: 14px;
+	padding: 20px;
+	margin: 0 auto;
+	transform: scale(1);
+	transition: all 0.2s linear;
+
+	&:hover {
+		background-color: #f1f1f1;
+		box-shadow: 4px 9px 20px 0px #00000033;
+		transform: scale(1.02);
+	}
+
+	&__day,
+	&__img,
+	&__celsia,
+	&__weather-info {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 24px;
+	}
+
+	&__day {
+		color: #1C1C1C;
+		font-size: 24px;
+		font-weight: 500;
+	}
+
+	&__img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 120px;
+	}
+
+	&__celsia {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 95%;
+		color: #1C1C1C;
+		margin: 0 auto 15px;
+
+		&_max {
+			font-size: 28px;
+			font-weight: 600;
+		}
+
+		&_min {
+			font-size: 24px;
+			font-weight: 400;
+		}
+	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 14px;
+		font-weight: 300;
+	}
+
+	&__humidity,
+	&__wind {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		p {
+			margin-left: 5px;
+		}
+	}
+}

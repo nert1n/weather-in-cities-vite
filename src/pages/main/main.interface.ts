@@ -1,4 +1,4 @@
-export interface WeatherReading {
+export interface IMain {
   dt: number;
   dt_txt: string;
   main: {

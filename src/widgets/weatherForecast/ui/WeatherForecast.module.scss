@@ -1,10 +1,21 @@
 .forecast {
   margin: 24px 0;
 
+  &__title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: var(--text-color-light);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 auto 30px auto;
+  }
+
   &__holder {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 12px 0;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }

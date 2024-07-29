@@ -33,6 +33,6 @@ export interface WeatherReading {
   };
 }
 
-export interface IWeatherForecast {
-  weatherInfo: WeatherReading[];
+export interface IWeatherCard {
+  dayInfo: WeatherReading;
 }

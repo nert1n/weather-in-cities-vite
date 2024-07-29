@@ -20,9 +20,6 @@ export const Header = () => {
       <Search className={styles.header__input} />
       <div className={`${styles.header__nav} ${isActive ? styles.active : ""}`}>
         <SelectLang className={styles.header__select} />
-        <Link className={styles.header__auth} to="/auth/login/">
-          Login
-        </Link>
       </div>
       <div className={styles.header__burger}>
         <BurgerMenu isActive={isActive} setIsActive={setIsActive} />

@@ -1,21 +1,21 @@
 import { createSlice, Slice } from "@reduxjs/toolkit";
 
 export interface IAuthState {
-  value: boolean;
+	value: boolean;
 }
 
 const initialState: IAuthState = {
-  value: false,
+	value: false,
 };
 
 export const authSlice: Slice<IAuthState> = createSlice({
-  name: "auth",
-  initialState,
-  reducers: {
-    isTrue: (state) => {
-      state.value = !state.value;
-    },
-  },
+	name: "auth",
+	initialState,
+	reducers: {
+		isTrue: state => {
+			state.value = !state.value;
+		},
+	},
 });
 
 export const { isTrue } = authSlice.actions;

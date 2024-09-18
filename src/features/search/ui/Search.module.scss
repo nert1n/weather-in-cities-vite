@@ -28,6 +28,7 @@
     background-color: white;
     font-size: 16px;
     padding: 4px;
+
     &:not(:last-child) {
       margin-bottom: 4px;
     }
@@ -42,10 +43,10 @@
   min-width: 120px;
   max-width: 330px;
   border-radius: 5px;
-  outline: 1px solid rgba(0, 0, 0, 0);
+  outline: 1px solid rgb(0 0 0 / 0%);
   background-color: var(--background-input-color);
   color: var(--text-color-black);
-  padding: 8px 6px 8px 6px;
+  padding: 8px 6px;
   transition: all 0.4s ease 0s;
 
   &:hover {

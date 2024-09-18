@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: var(--background-color--header_footer);
+  background-color: var(--background-color-header-footer);
   font-size: 14px;
   font-weight: 300;
   padding: 22px 5%;
@@ -17,9 +17,11 @@
     &:hover {
       color: var(--yellow-hover);
     }
+
     &:visited {
       color: var(--yellow);
     }
+
     &:active {
       color: var(--yellow-hover);
     }

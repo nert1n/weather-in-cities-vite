@@ -1,15 +1,15 @@
 import { configureStore, EnhancedStore } from "@reduxjs/toolkit";
 
-import authReducer, { IAuthState } from "./slices/authSlice";
-import cityReducer, { ICityState } from "./slices/citySlice";
+import authReducer, { IAuthState } from "./slices/auth-slice.ts";
+import cityReducer, { ICityState } from "./slices/city-slice.ts";
 
 export const store: EnhancedStore<{ city: ICityState; auth: IAuthState }> =
-  configureStore({
-    reducer: {
-      auth: authReducer,
-      city: cityReducer,
-    },
-  });
+	configureStore({
+		reducer: {
+			auth: authReducer,
+			city: cityReducer,
+		},
+	});
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

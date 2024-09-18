@@ -1,13 +1,10 @@
-name: Post push testing
-
-run-name: ${{ github.actor }} is testing post push 🚀
-
+name: Building tests
+run-name: ${{ github.actor }} is building testing
 on:
   push:
-    branches: ["main"]
+    branches: [main, development]
   pull_request:
-    branches: ["main"]
-
+    branches: [main, development]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -20,9 +17,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+      - name: install pnpm
+        run: npm install -g pnpm
       - name: install modules
-        run: npm install
-      - name: build project
-        run: npm run build
-      - name: lint code
-        run: npm run lint
+        run: pnpm install
+      - name: build code
+        run: pnpm run build

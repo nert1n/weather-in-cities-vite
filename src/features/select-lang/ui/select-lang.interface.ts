@@ -1,5 +1,5 @@
 interface ISelectLang {
-  className?: string;
+	className?: string;
 }
 
 export default ISelectLang;

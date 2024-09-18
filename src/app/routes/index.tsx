@@ -5,13 +5,13 @@ import { routes } from "./router.tsx";
 const router = createBrowserRouter(routes);
 
 const AppRouter = () => {
-  return (
-    <RouterProvider
-      router={router}
-      future={{ v7_startTransition: true }}
-      fallbackElement={<h1>Loading</h1>}
-    />
-  );
+	return (
+		<RouterProvider
+			fallbackElement={<h1>Loading</h1>}
+			future={{ v7_startTransition: true }}
+			router={router}
+		/>
+	);
 };
 
 export default AppRouter;

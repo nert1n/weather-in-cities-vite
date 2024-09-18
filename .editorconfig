@@ -1,0 +1,29 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 80
+
+tab_width = 2
+indent_style = tab
+
+[*.md]
+indent_size = 4
+trim_trailing_whitespace = false
+max_line_length = 0
+
+[*.yml]
+indent_style = space
+
+[*.html]
+max_line_length = 120
+
+[*.scss]
+max_line_length = 120
+
+[COMMIT_EDITMSG]
+max_line_length = 0

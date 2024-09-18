@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  background-color: var(--background-color--header_footer);
+  background-color: var(--background-color-header-footer);
   color: var(--text-color-light);
   font-size: 16px;
   font-weight: 400;
@@ -13,14 +13,11 @@
 
   &__auth {
     margin-left: 24px;
+	  color: var(--text-color-lighth);
   }
 
   &__burger {
     display: none;
-  }
-
-  &__auth {
-    color: var(--text-color-lighth);
   }
 
   &__title {

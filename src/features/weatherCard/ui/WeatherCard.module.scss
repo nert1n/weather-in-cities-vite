@@ -1,9 +1,9 @@
 .card {
 	width: 200px;
 	min-height: 250px;
-	background-color: #ffffff;
+	background-color: #fff;
 	border-radius: 10px;
-	box-shadow: 4px 9px 20px 0px #00000033;
+	box-shadow: 4px 9px 20px 0 #0003;
 	color: #1C1C1C;
 	font-size: 14px;
 	padding: 20px;
@@ -13,7 +13,7 @@
 
 	&:hover {
 		background-color: #f1f1f1;
-		box-shadow: 4px 9px 20px 0px #00000033;
+		box-shadow: 4px 9px 20px 0 #0003;
 		transform: scale(1.02);
 	}
 

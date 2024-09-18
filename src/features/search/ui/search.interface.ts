@@ -1,5 +1,5 @@
 interface ISearch {
-  className: string;
+	className: string;
 }
 
 export default ISearch;

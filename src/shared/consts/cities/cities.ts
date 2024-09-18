@@ -1,6 +1,6 @@
-import CITIES_EN from "./languages/cities_en.ts";
-import CITIES_UA from "./languages/cities_ua.ts";
+import EN from "./languages/en.ts";
+import UA from "./languages/ua.ts";
 
-const CITIES = [...CITIES_EN, ...CITIES_UA];
+const CITIES = [...EN, ...UA];
 
 export default CITIES;

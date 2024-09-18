@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 
 import { WeatherCard } from "@features/weatherCard";
 
-import { IWeatherForecast } from "./weather-forecast.interface.ts";
-import styles from "./WeatherForecast.module.scss";
+import styles from "./weather-forecast.module.scss";
+import { IWeatherForecast } from "../model/types";
 
 export const WeatherForecast = ({ weatherInfo }: IWeatherForecast) => {
 	const { t } = useTranslation();

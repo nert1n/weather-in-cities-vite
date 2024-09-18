@@ -1,12 +1,19 @@
-import ILayout from "./layout.interface.ts";
-import { Footer } from "../../widgets/footer";
-import { Header } from "../../widgets/header";
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
 
-const Layout = ({ children }: ILayout) => {
+import { Loader } from "@shared/lib/ui/components/loader";
+import { Footer } from "@widgets/footer";
+import { Header } from "@widgets/header";
+
+const Layout = () => {
 	return (
 		<>
 			<Header />
-			<main>{children}</main>
+			<main>
+				<Suspense fallback={<Loader />}>
+					<Outlet />
+				</Suspense>
+			</main>
 			<Footer />
 		</>
 	);

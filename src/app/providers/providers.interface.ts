@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 
-interface IProviders {
+export interface IProviders {
 	children: ReactNode;
 }
-
-export default IProviders;

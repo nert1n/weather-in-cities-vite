@@ -2,12 +2,12 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 
-import { syncState } from "@app/store/slices/city-slice.ts";
-import CITIES from "@shared/consts/cities/cities.ts";
+import { syncState } from "@app/store/slices/city-slice";
+import CITIES from "@shared/consts/cities/cities";
 import Magnifier from "@shared/lib/ui/icons/magnifier";
 
-import ISearch from "./search.interface.ts";
-import styles from "./Search.module.scss";
+import styles from "./search.module.scss";
+import { ISearch } from "../model/types";
 
 interface IForm {
 	city: string;

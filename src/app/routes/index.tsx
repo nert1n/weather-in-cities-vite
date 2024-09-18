@@ -1,17 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { routes } from "./router.tsx";
+import { Loader } from "@shared/lib/ui/components/loader";
+
+import { routes } from "./router";
 
 const router = createBrowserRouter(routes);
 
-const AppRouter = () => {
-	return (
-		<RouterProvider
-			fallbackElement={<h1>Loading</h1>}
-			future={{ v7_startTransition: true }}
-			router={router}
-		/>
-	);
-};
+const AppRouter = () => (
+	<RouterProvider
+		fallbackElement={<Loader />}
+		future={{ v7_startTransition: true }}
+		router={router}
+	/>
+);
 
 export default AppRouter;

@@ -3,17 +3,16 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import Layout from "@app/layout";
 import { RootState } from "@app/store/store";
-import LoaderCircle from "@entities/loader-circle";
-import { IMain } from "@pages/main/main.interface";
-import MainService from "@shared/api/main.ts";
+import { IMain } from "@pages/main/model/main.interface";
+import MainService from "@shared/api/main";
+import { Loader } from "@shared/lib/ui/components/loader";
 import { WeatherDay } from "@widgets/weatherDay";
 import { WeatherForecast } from "@widgets/weatherForecast";
 
 import styles from "./MainPage.module.scss";
 
-const MainPage = () => {
+export const Main = () => {
 	const city = useSelector((state: RootState) => state.city.value);
 	const { i18n, t } = useTranslation();
 	const language = i18n.language;
@@ -49,34 +48,22 @@ const MainPage = () => {
 
 	if (isError) {
 		return (
-			<Layout>
-				<h1 className={styles.main__notfound}>{t("search.city.notfound")}</h1>
-			</Layout>
+			<h1 className={styles.main__notfound}>{t("search.city.notfound")}</h1>
 		);
 	}
 
 	if (isLoading || isFetching) {
-		return (
-			<Layout>
-				<LoaderCircle />
-			</Layout>
-		);
+		return <Loader />;
 	}
 
 	return (
-		<Layout>
-			<div className={styles.main}>
-				{weatherInfo.length !== 0 ? (
-					<>
-						<WeatherDay city={city} weatherInfo={weatherInfo[0]} />
-						<WeatherForecast weatherInfo={weatherInfo} />
-					</>
-				) : (
-					""
-				)}
-			</div>
-		</Layout>
+		<div className={styles.main}>
+			{weatherInfo.length !== 0 && (
+				<>
+					<WeatherDay city={city} weatherInfo={weatherInfo[0]} />
+					<WeatherForecast weatherInfo={weatherInfo} />
+				</>
+			)}
+		</div>
 	);
 };
-
-export default MainPage;

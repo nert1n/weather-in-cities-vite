@@ -1,9 +1,10 @@
 import { useTranslation } from "react-i18next";
 
-import { IWeatherCard } from "./weather-card.interface.ts";
-import styles from "./WeatherCard.module.scss";
-import Humidity from "../../../shared/lib/ui/icons/humidity";
-import Wind from "../../../shared/lib/ui/icons/wind";
+import Humidity from "@shared/lib/ui/icons/humidity";
+import Wind from "@shared/lib/ui/icons/wind";
+
+import styles from "./weather-card.module.scss";
+import { IWeatherCard } from "../model/types";
 
 export const WeatherCard = ({ dayInfo }: IWeatherCard) => {
 	const { t } = useTranslation();

@@ -9,7 +9,7 @@ const DEFAULT_COLOR = "black";
 const DEFAULT_HEIGHT = 20;
 const DEFAULT_WIDTH = 14;
 
-const Humidity = ({
+export const HumidityIcon = ({
 	className,
 	color = DEFAULT_COLOR,
 	height = DEFAULT_HEIGHT,
@@ -31,5 +31,3 @@ const Humidity = ({
 		</div>
 	);
 };
-
-export default Humidity;

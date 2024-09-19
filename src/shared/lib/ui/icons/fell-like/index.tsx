@@ -9,7 +9,7 @@ const DEFAULT_COLOR = "black";
 const DEFAULT_HEIGHT = 35;
 const DEFAULT_WIDTH = 20;
 
-const FellLike = ({
+export const FellLikeIcon = ({
 	className,
 	color = DEFAULT_COLOR,
 	height = DEFAULT_HEIGHT,
@@ -31,5 +31,3 @@ const FellLike = ({
 		</div>
 	);
 };
-
-export default FellLike;

@@ -1,55 +1,39 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 import { RootState } from "@app/store/store";
-import { IMain } from "@pages/main/model/main.interface";
+import { CityNotFound } from "@entities/cityNotFound";
 import MainService from "@shared/api/main";
 import { Loader } from "@shared/lib/ui/components/loader";
+import { TWeatherData } from "@shared/types/weather";
 import { WeatherDay } from "@widgets/weatherDay";
 import { WeatherForecast } from "@widgets/weatherForecast";
 
-import styles from "./MainPage.module.scss";
-
 export const Main = () => {
 	const city = useSelector((state: RootState) => state.city.value);
-	const { i18n, t } = useTranslation();
-	const language = i18n.language;
+	const { i18n } = useTranslation();
 
-	const [weatherInfo, setWeatherInfo] = useState<IMain[]>([]);
-	const [time] = useState(9);
-
-	const queryClient = useQueryClient();
+	const [weatherInfo, setWeatherInfo] = useState<TWeatherData[]>([]);
 
 	const { data, isError, isFetching, isLoading } = useQuery({
-		queryKey: ["getAll", city, language],
-		queryFn: () => MainService.getAll(city, language),
+		queryKey: ["getAll", city, i18n.language],
+		queryFn: () => MainService.getAll(city, i18n.language),
+		enabled: city.trim() !== "",
 	});
 
 	useEffect(() => {
-		if (city.trim() !== "") {
-			queryClient.refetchQueries({
-				queryKey: ["getAll", city, language],
-				exact: true,
-			});
-		}
-	}, [city, time, language, queryClient]);
-
-	useEffect(() => {
-		if (data) {
-			const dailyData = data.list.filter(
-				(reading: { dt_txt: string | string[] }) =>
-					reading.dt_txt.includes(`${time}:00:00`)
+		if (data && Array.isArray(data.list)) {
+			const dailyData = data.list.filter((reading: { dt_txt: string }) =>
+				reading.dt_txt.includes("9:00:00")
 			);
 			setWeatherInfo(dailyData);
 		}
-	}, [data, time, city]);
+	}, [data, city]);
 
 	if (isError) {
-		return (
-			<h1 className={styles.main__notfound}>{t("search.city.notfound")}</h1>
-		);
+		return <CityNotFound />;
 	}
 
 	if (isLoading || isFetching) {
@@ -57,12 +41,14 @@ export const Main = () => {
 	}
 
 	return (
-		<div className={styles.main}>
-			{weatherInfo.length !== 0 && (
+		<div>
+			{weatherInfo.length > 0 ? (
 				<>
 					<WeatherDay city={city} weatherInfo={weatherInfo[0]} />
 					<WeatherForecast weatherInfo={weatherInfo} />
 				</>
+			) : (
+				<Loader />
 			)}
 		</div>
 	);

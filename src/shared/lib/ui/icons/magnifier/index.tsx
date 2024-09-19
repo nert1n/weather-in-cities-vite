@@ -9,7 +9,7 @@ const DEFAULT_COLOR = "black";
 const DEFAULT_HEIGHT = 18;
 const DEFAULT_WIDTH = 18;
 
-const Magnifier = ({
+export const MagnifierIcon = ({
 	className,
 	color = DEFAULT_COLOR,
 	height = DEFAULT_HEIGHT,
@@ -31,5 +31,3 @@ const Magnifier = ({
 		</div>
 	);
 };
-
-export default Magnifier;

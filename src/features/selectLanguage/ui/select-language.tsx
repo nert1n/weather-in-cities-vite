@@ -11,9 +11,8 @@ export const SelectLanguage = ({ className }: ISelectLang) => {
 	const [lang, setLang] = useState("en");
 
 	const languageChange = (e: ChangeEvent<HTMLSelectElement>) => {
-		const language = e.target.value;
-		setLang(language);
-		i18n.changeLanguage(language);
+		setLang(e.target.value);
+		i18n.changeLanguage(e.target.value);
 	};
 
 	useEffect(() => {

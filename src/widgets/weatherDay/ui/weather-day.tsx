@@ -1,9 +1,9 @@
-import { useDataIcons } from "@widgets/weatherDay/model/data.tsx";
+import { useDataIcons } from "@widgets/weatherDay/model/data";
 
 import styles from "./weather-day.module.scss";
-import { WeatherDayProps } from "../model/types";
+import { IWeatherDay } from "../model/types";
 
-export const WeatherDay = ({ city, weatherInfo }: WeatherDayProps) => {
+export const WeatherDay = ({ city, weatherInfo }: IWeatherDay) => {
 	const iconClass = styles["day__item-like-icon"];
 	const data = useDataIcons({ weatherInfo, iconClass });
 	const imgURL = `owf owf-${weatherInfo.weather[0].id} owf-5x`;

@@ -9,7 +9,7 @@ const DEFAULT_COLOR = "black";
 const DEFAULT_HEIGHT = 36;
 const DEFAULT_WIDTH = 36;
 
-const Profile = ({
+export const ProfileIcon = ({
 	className,
 	color = DEFAULT_COLOR,
 	height = DEFAULT_HEIGHT,
@@ -46,5 +46,3 @@ const Profile = ({
 		</div>
 	);
 };
-
-export default Profile;

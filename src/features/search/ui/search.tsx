@@ -4,20 +4,16 @@ import { useDispatch } from "react-redux";
 
 import { syncState } from "@app/store/slices/city-slice";
 import CITIES from "@shared/consts/cities/cities";
-import Magnifier from "@shared/lib/ui/icons/magnifier";
+import { MagnifierIcon } from "@shared/lib/ui/icons";
 
 import styles from "./search.module.scss";
-import { ISearch } from "../model/types";
-
-interface IForm {
-	city: string;
-}
+import { ISearch, ISearchForm } from "../model/types";
 
 export const Search = ({ className }: ISearch) => {
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
 
-	const { handleSubmit, register, setValue, watch } = useForm<IForm>({
+	const { handleSubmit, register, setValue, watch } = useForm<ISearchForm>({
 		mode: "onBlur",
 	});
 
@@ -27,7 +23,7 @@ export const Search = ({ className }: ISearch) => {
 		return CITIES.filter(el => el.toLowerCase().includes(city.toLowerCase()));
 	}
 
-	const handleCityChange = ({ city }: IForm) => {
+	const handleCityChange = ({ city }: ISearchForm) => {
 		dispatch(syncState(city));
 	};
 
@@ -50,7 +46,7 @@ export const Search = ({ className }: ISearch) => {
 					className={styles.search__button}
 					title={t("search.button")}
 					type="submit">
-					<Magnifier
+					<MagnifierIcon
 						className={styles.search__icon}
 						color={"var(--icon-color)"}
 					/>

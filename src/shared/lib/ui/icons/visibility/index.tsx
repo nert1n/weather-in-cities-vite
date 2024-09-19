@@ -9,7 +9,7 @@ const DEFAULT_COLOR = "black";
 const DEFAULT_HEIGHT = 28;
 const DEFAULT_WIDTH = 46;
 
-const Visibility = ({
+export const VisibilityIcon = ({
 	className,
 	color = DEFAULT_COLOR,
 	height = DEFAULT_HEIGHT,
@@ -43,5 +43,3 @@ const Visibility = ({
 		</div>
 	);
 };
-
-export default Visibility;

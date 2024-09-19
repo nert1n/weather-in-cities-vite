@@ -1,13 +1,14 @@
 import { useTranslation } from "react-i18next";
 
-import FellLike from "@shared/lib/ui/icons/fell_like";
-import Humidity from "@shared/lib/ui/icons/humidity";
-import Pressure from "@shared/lib/ui/icons/pressure";
-import SeaLevel from "@shared/lib/ui/icons/sea_level";
-import Visibility from "@shared/lib/ui/icons/visibility";
-import Wind from "@shared/lib/ui/icons/wind";
-
-import { WeatherReading } from "./types.ts";
+import {
+	FellLikeIcon,
+	HumidityIcon,
+	PressureIcon,
+	SeaLevelIcon,
+	VisibilityIcon,
+	WindIcon,
+} from "@shared/lib/ui/icons";
+import { TWeatherData } from "@shared/types/weather";
 
 const iconColor = "var(--text-color-light)";
 const iconWidth = 40;
@@ -17,7 +18,7 @@ export const useDataIcons = ({
 	iconClass,
 	weatherInfo,
 }: {
-	weatherInfo: WeatherReading;
+	weatherInfo: TWeatherData;
 	iconClass: string;
 }) => {
 	const { t } = useTranslation();
@@ -25,7 +26,7 @@ export const useDataIcons = ({
 	return [
 		{
 			img: (
-				<FellLike
+				<FellLikeIcon
 					className={iconClass}
 					color={iconColor}
 					height={iconHeight}
@@ -37,7 +38,7 @@ export const useDataIcons = ({
 		},
 		{
 			img: (
-				<Wind
+				<WindIcon
 					className={iconClass}
 					color={iconColor}
 					height={iconHeight}
@@ -49,7 +50,7 @@ export const useDataIcons = ({
 		},
 		{
 			img: (
-				<Visibility
+				<VisibilityIcon
 					className={iconClass}
 					color={iconColor}
 					height={iconHeight}
@@ -61,7 +62,7 @@ export const useDataIcons = ({
 		},
 		{
 			img: (
-				<Humidity
+				<HumidityIcon
 					className={iconClass}
 					color={iconColor}
 					height={iconHeight}
@@ -73,7 +74,7 @@ export const useDataIcons = ({
 		},
 		{
 			img: (
-				<Pressure
+				<PressureIcon
 					className={iconClass}
 					color={iconColor}
 					height={iconHeight}
@@ -85,7 +86,7 @@ export const useDataIcons = ({
 		},
 		{
 			img: (
-				<SeaLevel
+				<SeaLevelIcon
 					className={iconClass}
 					color={iconColor}
 					height={iconHeight}

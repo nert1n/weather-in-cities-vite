@@ -1,4 +1,4 @@
-export interface IMain {
+export type TWeatherData = {
 	dt: number;
 	dt_txt: string;
 	main: {
@@ -31,4 +31,8 @@ export interface IMain {
 		deg: number;
 		gust: number;
 	};
-}
+};
+
+export type TWeatherInfo = {
+	weatherInfo: TWeatherData[];
+};

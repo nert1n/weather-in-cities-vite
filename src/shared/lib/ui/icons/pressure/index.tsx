@@ -9,7 +9,7 @@ const DEFAULT_COLOR = "black";
 const DEFAULT_HEIGHT = 36;
 const DEFAULT_WIDTH = 36;
 
-const Pressure = ({
+export const PressureIcon = ({
 	className,
 	color = DEFAULT_COLOR,
 	height = DEFAULT_HEIGHT,
@@ -35,5 +35,3 @@ const Pressure = ({
 		</div>
 	);
 };
-
-export default Pressure;

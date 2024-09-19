@@ -1,1 +1,1 @@
-export { Loader } from "./ui/loader.tsx";
+export { Loader } from "./ui/loader";

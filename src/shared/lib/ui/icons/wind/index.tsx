@@ -9,7 +9,7 @@ const DEFAULT_COLOR = "black";
 const DEFAULT_HEIGHT = 23;
 const DEFAULT_WIDTH = 19;
 
-const Wind = ({
+export const WindIcon = ({
 	className,
 	color = DEFAULT_COLOR,
 	height = DEFAULT_HEIGHT,
@@ -31,5 +31,3 @@ const Wind = ({
 		</div>
 	);
 };
-
-export default Wind;

@@ -9,7 +9,7 @@ const DEFAULT_COLOR = "black";
 const DEFAULT_HEIGHT = 32;
 const DEFAULT_WIDTH = 40;
 
-const SeaLevel = ({
+export const SeaLevelIcon = ({
 	className,
 	color = DEFAULT_COLOR,
 	height = DEFAULT_HEIGHT,
@@ -47,5 +47,3 @@ const SeaLevel = ({
 		</div>
 	);
 };
-
-export default SeaLevel;

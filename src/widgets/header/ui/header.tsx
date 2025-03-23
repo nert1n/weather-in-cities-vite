@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { BurgerMenu } from "@entities/burger-menu";
 import { Search } from "@features/search";
-import { BurgerMenu } from "entities/burger-menu";
-import { SelectLanguage } from "features/select-language";
+import { SelectLanguage } from "@features/select-language";
 
 import styles from "./header.module.scss";
 

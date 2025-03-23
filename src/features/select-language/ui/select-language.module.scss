@@ -1,8 +1,29 @@
 .select {
-	cursor: pointer;
-	background-color: #0000;
-	border-radius: 5px;
-	color: var(--text-color-light);
-	font-size: 16px;
-	padding: 5px 8px;
+	position: relative;
+
+	&__button {
+		font-size: 16px;
+		color: white;
+	}
+
+	&__popover {
+		right: -50%;
+		bottom: -100px;
+		position: absolute;
+		background-color: white;
+		border-radius: 12px;
+		padding: 10px;
+
+		&__button {
+			border-radius: 4px;
+			font-size: 14px;
+			font-weight: normal;
+			padding: 4px 0;
+			width: 80px;
+
+			&:hover {
+        background-color: #f1f1f1;
+      }
+		}
+	}
 }

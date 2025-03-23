@@ -1,0 +1,6 @@
+{
+	"include": [".eslintrc.cjs"],
+	"compilerOptions": {
+		"noEmit": true
+	}
+}

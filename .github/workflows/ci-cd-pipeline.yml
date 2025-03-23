@@ -1,0 +1,27 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: [self-hosted, frontend]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t codersbud/frontend:latest .
+
+      - name: Deploy to EC2
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > codersbud-frontend.pem
+          chmod 600 codersbud-frontend.pem
+          ssh -o StrictHostKeyChecking=no -i "codersbud-frontend.pem" ec2-user@13.49.139.16 "
+            cd /home/ec2-user &&
+            ls -l &&
+            docker-compose up -d"

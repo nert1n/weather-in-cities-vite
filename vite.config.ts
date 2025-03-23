@@ -1,7 +1,6 @@
 import legacy from "@vitejs/plugin-legacy";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
 import path from "path";
-import postcssNesting from "postcss-nesting";
 import { defineConfig } from "vite";
 import compression from "vite-plugin-compression";
 import { VitePWA } from "vite-plugin-pwa";
@@ -10,7 +9,7 @@ import sitemap from "vite-plugin-sitemap";
 export default defineConfig({
 	plugins: [
 		react(),
-		sitemap({ hostname: "https://www.codersbud.com" }),
+		sitemap({ hostname: "https://weather-in-cities-vite.vercel.app/" }),
 		compression({ algorithm: "gzip" }),
 		legacy({ targets: ["defaults", "not IE 11"] }),
 		VitePWA({
@@ -19,14 +18,41 @@ export default defineConfig({
 			manifest: {
 				name: "WISICO",
 				short_name: "WISICO",
-				description: "Weather website",
-				theme_color: "#74eeff",
+				description:
+					"A simple site for viewing the weather forecast for 5 days on vite. I have nothing more to say about such a simple project.",
+				theme_color: "#ffffff",
+			},
+			workbox: {
+				runtimeCaching: [
+					{
+						urlPattern: /^https:\/\/api\.template\.com\/.*$/,
+						handler: "NetworkFirst",
+						options: {
+							cacheName: "api-cache",
+							expiration: {
+								maxEntries: 50,
+								maxAgeSeconds: 60 * 60 * 24,
+							},
+						},
+					},
+					{
+						urlPattern: /^https:\/\/www\.template\.com\/.*$/,
+						handler: "NetworkFirst",
+						options: {
+							cacheName: "html-cache",
+						},
+					},
+				],
 			},
 		}),
 	],
 	css: {
-		postcss: {
-			plugins: [postcssNesting],
+		preprocessorOptions: {
+			scss: {
+				sassOptions: {
+					api: "modern-compiler",
+				},
+			},
 		},
 	},
 	resolve: {
@@ -40,11 +66,36 @@ export default defineConfig({
 			"@shared": path.resolve(__dirname, "./src/shared"),
 		},
 	},
-	optimizeDeps: { include: ["react", "react-dom"] },
+	server: {
+		port: 3000,
+		proxy: {
+			"/api": {
+				target: "https://api.template.com",
+				changeOrigin: true,
+				secure: true,
+				cookieDomainRewrite: "localhost",
+				rewrite: path => path.replace(/^\/api/, ""),
+			},
+			"/ws": {
+				target: "wss://api.template.com",
+				ws: true,
+				rewrite: path => path.replace(/^\/ws/, "/chat"),
+				changeOrigin: true,
+				rewriteWsOrigin: true,
+				secure: true,
+			},
+		},
+		hmr: { overlay: true },
+		fs: {
+			allow: [".."],
+		},
+	},
+	optimizeDeps: { include: ["react", "react-dom", "workbox-window"] },
 	build: {
 		target: "esnext",
 		outDir: "dist",
 		rollupOptions: {
+			external: ["workbox-window"],
 			input: path.resolve(__dirname, "index.html"),
 			output: {
 				manualChunks(id) {

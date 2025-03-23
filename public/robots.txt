@@ -1,0 +1,38 @@
+User-agent: *
+Disallow: /login/
+Disallow: /register/
+
+Allow: /public/
+Allow: /images/
+Allow: /js/
+Allow: /css/
+
+
+User-agent: Googlebot
+Disallow: /no-google/
+Allow: /allow-google/
+
+User-agent: Bingbot
+Disallow: /no-bing/
+Allow: /allow-bing/
+
+User-agent: BadBot
+Disallow: /
+
+Sitemap: https://www.template.com/sitemap.xml
+
+User-agent: *
+Disallow: /*?session_id=
+
+User-agent: *
+Disallow: /*.pdf$
+
+Crawl-delay: 10
+
+User-agent: Googlebot-Image
+Disallow: /private/images/
+
+User-agent: Slurp
+Disallow: /sensitive-data/
+
+Disallow: /search/

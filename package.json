@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
+		"dev:host": "vite --host",
 		"build": "tsc -b && vite build",
 		"lint": "pnpm run lint:ts && pnpm run lint:css",
 		"lint:fix": "pnpm run lint:ts:fix && pnpm run lint:css:fix",
@@ -37,6 +38,7 @@
 		"@typescript-eslint/parser": "^7.18.0",
 		"@vitejs/plugin-legacy": "^5.4.3",
 		"@vitejs/plugin-react-swc": "^3.8.1",
+		"@vitejs/plugin-react": "^4.3.4",
 		"autoprefixer": "^10.4.21",
 		"eslint": "^8.57.1",
 		"eslint-config-airbnb-base": "^15.0.0",
@@ -56,11 +58,12 @@
 		"eslint-plugin-sort-destructure-keys": "^2.0.0",
 		"eslint-plugin-unicorn": "^55.0.0",
 		"husky": "^9.1.7",
+		"lint-staged": "^15.5.0",
 		"postcss": "^8.5.3",
 		"postcss-load-config": "^6.0.1",
 		"postcss-nesting": "^12.1.5",
 		"prettier": "^3.5.3",
-		"sass": "^1.86.0",
+		"sass": "1.78.0",
 		"stylelint": "^16.16.0",
 		"stylelint-config-standard": "^36.0.1",
 		"stylelint-config-standard-scss": "^13.1.0",
@@ -72,5 +75,24 @@
 		"vite-plugin-compression": "^0.5.1",
 		"vite-plugin-pwa": "^0.20.5",
 		"vite-plugin-sitemap": "^0.7.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.ts": [
+			"eslint --cache --fix",
+			"git add ."
+		],
+		"*.tsx": [
+			"eslint --cache --fix",
+			"git add ."
+		],
+		"*.scss": [
+			"stylelint --fix",
+			"git add ."
+		]
 	}
 }

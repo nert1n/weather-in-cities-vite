@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [21.x]
     steps:
       - uses: actions/checkout@v4
       - name: Starting Node.js ${{ matrix.node-version }}
@@ -22,4 +22,4 @@ jobs:
       - name: install modules
         run: pnpm install
       - name: build code
-        run: pnpm run build
+        run: pnpm build

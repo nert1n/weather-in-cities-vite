@@ -52,9 +52,8 @@ module.exports = {
 			},
 		],
 
-		// MAYBE CHANGE LATER ON WARN
 		"security/detect-object-injection": "off",
-
+		"sonarjs/todo-tag": "off",
 		"promise/always-return": "error",
 		"promise/no-return-wrap": "error",
 		"promise/param-names": "error",
@@ -102,10 +101,11 @@ module.exports = {
 		react: {
 			version: "detect",
 		},
+		typescript: {},
 		"import/resolver": {
 			typescript: {
 				alwaysTryTypes: true,
-				project: "./tsconfig.app.json",
+				project: "./tsconfig.json",
 			},
 		},
 	},

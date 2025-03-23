@@ -7,9 +7,6 @@
 <p align="center">This is a simple weather check on react</p>
 
 <p align="center">
-  <a aria-label="npm package" href="https://www.npmjs.com/package/nert1n/weather-in-cities-vite">
-    <img alt="npm package" src="https://img.shields.io/npm/v/nert1n/weather-in-cities-vite.svg">
-  </a>
   <a aria-label="contributors graph" href="https://github.com/nert1n/weather-in-cities-vite/graphs/contributors">
     <img alt="contributors graph" src="https://img.shields.io/github/contributors/nert1n/weather-in-cities-vite.svg">
   </a>

@@ -23,4 +23,3 @@ jobs:
         run: pnpm install
       - name: lint project
         run: pnpm run lint
-

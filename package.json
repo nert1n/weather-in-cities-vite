@@ -15,7 +15,7 @@
 		"lint:css:fix": "stylelint \"src/**/*.scss\" --fix --max-warnings 0",
 		"format": "prettier --write .",
 		"preview": "vite preview",
-		"prepare": "husky"
+		"prepare": "husky && husky install"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.6.1",

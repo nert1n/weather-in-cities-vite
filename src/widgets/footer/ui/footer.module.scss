@@ -1,7 +1,4 @@
 .footer {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	width: 100%;
 	background-color: var(--background-color-header-footer);
 	font-size: 14px;
@@ -9,6 +6,15 @@
 	padding: 22px 5%;
 	margin-top: 50px;
 	transition: all 0.2s linear;
+
+	&__holder {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		max-width: 1680px;
+		margin: 0 auto;
+	}
 
 	&__link {
 		color: var(--yellow);

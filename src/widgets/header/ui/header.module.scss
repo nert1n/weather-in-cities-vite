@@ -11,6 +11,15 @@
 	margin-bottom: 50px;
 	transition: all 0.2s linear;
 
+	&__holder {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		max-width: 1680px;
+		margin: 0 auto;
+	}
+
 	&__auth {
 		margin-left: 24px;
 		color: var(--text-color-lighth);

@@ -7,18 +7,20 @@ export const Footer = () => {
 
 	return (
 		<footer className={styles.footer}>
-			<p className={styles.footer__text}>
-				{t("footer.powered")}&nbsp;
-				<a
-					className={styles.footer__link}
-					href="https://github.com/nert1n"
-					rel="noreferrer"
-					target="_blank"
-					title={t("footer.button.go_home")}>
-					nert1n
-				</a>
-			</p>
-			<p className={styles.footer__year}>© 2024</p>
+			<div className={styles.footer__holder}>
+				<p className={styles.footer__text}>
+					{t("footer.powered")}&nbsp;
+					<a
+						className={styles.footer__link}
+						href="https://github.com/nert1n"
+						rel="noreferrer"
+						target="_blank"
+						title={t("footer.button.go_home")}>
+						nert1n
+					</a>
+				</p>
+				<p className={styles.footer__year}>© 2024</p>
+			</div>
 		</footer>
 	);
 };

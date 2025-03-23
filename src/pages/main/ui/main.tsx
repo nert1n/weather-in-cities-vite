@@ -11,6 +11,8 @@ import { TWeatherData } from "@shared/types/weather";
 import { WeatherDay } from "@widgets/weather-day";
 import { WeatherForecast } from "@widgets/weather-forecast";
 
+import styles from "./main.module.scss";
+
 export const Main = () => {
 	const city = useSelector((state: RootState) => state.city.value);
 	const { i18n } = useTranslation();
@@ -41,7 +43,7 @@ export const Main = () => {
 	}
 
 	return (
-		<div>
+		<div className={styles.main__holder}>
 			{weatherInfo.length > 0 ? (
 				<>
 					<WeatherDay city={city} weatherInfo={weatherInfo[0]} />

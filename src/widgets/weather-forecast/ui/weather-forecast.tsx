@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { WeatherCard } from "@features/weatherCard";
+import { WeatherCard } from "@features/weather-card";
 import { TWeatherInfo } from "@shared/types/weather";
 
 import styles from "./weather-forecast.module.scss";

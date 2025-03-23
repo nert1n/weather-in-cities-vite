@@ -1,4 +1,4 @@
-import { useDataIcons } from "@widgets/weatherDay/model/data";
+import { useDataIcons } from "@widgets/weather-day/model/data";
 
 import styles from "./weather-day.module.scss";
 import { IWeatherDay } from "../model/types";

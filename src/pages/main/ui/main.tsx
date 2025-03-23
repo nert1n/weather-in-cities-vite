@@ -4,12 +4,12 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 import { RootState } from "@app/store/store";
-import { CityNotFound } from "@entities/cityNotFound";
 import MainService from "@shared/api/main";
 import { Loader } from "@shared/lib/ui/components/loader";
 import { TWeatherData } from "@shared/types/weather";
-import { WeatherDay } from "@widgets/weatherDay";
-import { WeatherForecast } from "@widgets/weatherForecast";
+import { CityNotFound } from "entities/city-not-found";
+import { WeatherDay } from "widgets/weather-day";
+import { WeatherForecast } from "widgets/weather-forecast";
 
 export const Main = () => {
 	const city = useSelector((state: RootState) => state.city.value);
